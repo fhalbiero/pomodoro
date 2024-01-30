@@ -1,12 +1,14 @@
 import { HeaderContainer } from "./styles";
-import IgniteLogo from "../../assets/ignite-logo.svg";
 import { Timer, Scroll} from "phosphor-react";
 import { NavLink } from "react-router-dom";
+import { useTheme } from "styled-components";
 
 export function Header() {
+    const color = useTheme();
     return (
         <HeaderContainer>
-            <img src={IgniteLogo} alt="" />
+            <Timer size={84} color={color["green-500"]}/>
+            <h1><strong>Tomma</strong>timer</h1>
             <nav>
                 <NavLink to="/" title="Timer">
                     <Timer size={24} />
