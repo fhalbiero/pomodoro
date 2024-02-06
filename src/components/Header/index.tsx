@@ -8,7 +8,7 @@ export function Header() {
     return (
         <HeaderContainer>
             <Timer size={84} color={color["green-500"]}/>
-            <h1><strong>Tomma</strong>timer</h1>
+            <h1><strong>Tommato</strong>focus</h1>
             <nav>
                 <NavLink to="/" title="Timer">
                     <Timer size={24} />

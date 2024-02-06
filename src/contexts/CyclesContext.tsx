@@ -1,11 +1,14 @@
 import { ReactNode, createContext, useState, useReducer, useEffect } from "react";
+import { differenceInSeconds } from "date-fns";
 import { Cycle, cyclesReducer } from "../reducers/cycles/reducer";
 import { 
     addNewCycleAction, 
     interruptCurrentCycleAction, 
     markCurrentCycleAsFinishedAction 
 } from "../reducers/cycles/actions";
-import { differenceInSeconds } from "date-fns";
+import StartBeep from '../assets/start-beep.mp3';
+import FinishBeep from '../assets/finish-beep.mp3';
+import ChangeBeep from '../assets/change-beep.mp3';
 
 type CreateCycleData = {
     task: string;
@@ -66,15 +69,18 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
             minutesAmount: data.minutesAmount,
             startDate: new Date(),
         }
+        new Audio(StartBeep).play();
         dispatch(addNewCycleAction(newCycle));
         setAmountSecoundsPassed(0);
     }
 
     function interruptCurrentCycle() {
+        new Audio(ChangeBeep).play();
         dispatch(interruptCurrentCycleAction());
     }
 
     function markCurrentCycleAsFinished() {
+        new Audio(FinishBeep).play();
         dispatch(markCurrentCycleAsFinishedAction());       
     }
 
