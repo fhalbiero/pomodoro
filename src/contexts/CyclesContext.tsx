@@ -71,18 +71,17 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
     }
 
     function interruptCurrentCycle() {
-        dispatch(interruptCurrentCycleAction);
+        dispatch(interruptCurrentCycleAction());
     }
 
     function markCurrentCycleAsFinished() {
-        dispatch(markCurrentCycleAsFinishedAction);       
+        dispatch(markCurrentCycleAsFinishedAction());       
     }
 
     useEffect(() => {
         const stateJSON = JSON.stringify(cyclesState);
         localStorage.setItem('@pomodoro-app:cycles-state-1.0.0', stateJSON);
-
-    }, [cycles]);
+    }, [cycles, cyclesState]);
 
     return (
         <CyclesContext.Provider value={{ 

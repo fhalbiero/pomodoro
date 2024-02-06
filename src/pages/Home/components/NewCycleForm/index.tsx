@@ -22,12 +22,7 @@ export function NewCycleForm() {
                 disabled={!!activeCycle}
                 {...register('task')}
             />
-            <datalist id='task-suggestions'>
-                <option value="Project1" />
-                <option value="Project2" />
-                <option value="Project3" />
-                <option value="Project4" />
-            </datalist>
+            <datalist id='task-suggestions' />
 
             <label htmlFor="minutesAmount">for</label>
             <MinutesAmountInput 
