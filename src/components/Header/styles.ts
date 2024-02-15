@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header`
 
     nav {
         display: flex;
-        gap: 0.5rem;
+        gap: 18px;
         a {
             width: 3rem;
             height: 3rem;
@@ -33,6 +33,13 @@ export const HeaderContainer = styled.header`
             &.active {
                 color: ${props => props.theme['green-500']}; 
             }
+        }
+    }
+
+    @media (max-width: 600px){
+        padding: 0.5rem 1rem;
+        h1 {
+            font-size: 2.2rem;
         }
     }
 `;

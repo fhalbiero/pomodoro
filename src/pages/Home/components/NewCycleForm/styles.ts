@@ -26,6 +26,12 @@ export const FormContainer = styled.div`
     font-size: 1.125rem;
     font-weight: bold;
     flex-wrap: wrap;
+
+    @media (max-width: 600px){
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+    }
 `;
 
 const BaseInput = styled.input`
